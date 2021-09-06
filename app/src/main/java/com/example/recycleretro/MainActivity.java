@@ -117,6 +117,7 @@ public class MainActivity extends AppCompatActivity {
                                         {
                                             Log.i(TAG,"For loop k="+k+"l="+l+"j="+j);
                                             try {
+                                                //for delay thread for loop
                                                 Thread.sleep(500);
                                             } catch (InterruptedException e) {
                                                 e.printStackTrace();
