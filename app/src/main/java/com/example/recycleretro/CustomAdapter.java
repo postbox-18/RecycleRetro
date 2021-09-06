@@ -12,39 +12,35 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 
 public class CustomAdapter extends RecyclerView.Adapter <CustomAdapter.ViewHolder>{
-    ArrayList<String> name;
-    ArrayList<String> email;
-    ArrayList<String> id;
     Context context;
-    public CustomAdapter(Context context, ArrayList<String> name, ArrayList<String> email, ArrayList<String> id) {
-        this.context=context;
-        this.name=name;
-        this.email=email;
-        this.id=id;
+    ArrayList<ResObj>user;
 
+    public CustomAdapter(Context context, ArrayList<ResObj> resObj) {
+        this.user= resObj;
+        this.context=context;
     }
 
 
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.layout,parent,false);
+        View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.main_layout,parent,false);
         ViewHolder viewHolder=new ViewHolder(view);
         return viewHolder;
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        holder.name.setText(name.get(position));
-        holder.id.setText(id.get(position));
-        holder.email.setText(email.get(position));
+        holder.name.setText(user.get(position).getName());
+        holder.id.setText( user.get(position).getId());
+        holder.email.setText(user.get(position).getEmail());
 
     }
 
 
     @Override
     public int getItemCount() {
-        return 0;
+        return user.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {

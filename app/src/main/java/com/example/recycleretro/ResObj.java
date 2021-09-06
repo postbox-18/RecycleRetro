@@ -1,13 +1,43 @@
 package com.example.recycleretro;
 
-public class ResObj {
-    String cMobile;
+import androidx.annotation.NonNull;
 
-    public String getMsg() {
-        return cMobile;
+import java.util.ArrayList;
+import java.util.stream.Stream;
+
+public class ResObj  {
+    String name;
+    String id;
+    String email;
+
+    public ResObj(String name, String email, String id) {
+        this.name= name;
+        this.email= email;
+        this.id= id;
     }
 
-    public void setMsg(String cMobile) {
-        this.cMobile = cMobile;
+    public String getName() {
+        return name;
     }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail( String email) {
+        this.email = email;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
 }
